@@ -2,7 +2,7 @@
   <div class=" fit">
     <q-table
       class="fit"
-      title="Treats"
+	title="示例数据"
       :rows="rows"
       :columns="columns"
       row-key="name"
@@ -29,7 +29,7 @@ export default defineComponent({
 			{
 				name: "name",
 				required: true,
-				label: "Dessert (100g serving)",
+				label: "甜点 (每100g)",
 				align: "left",
 				field: (row) => row.name,
 				format: (val) => `${val}`,
@@ -38,24 +38,24 @@ export default defineComponent({
 			{
 				name: "calories",
 				align: "center",
-				label: "Calories",
+				label: "卡路里",
 				field: "calories",
 				sortable: true,
 			},
-			{ name: "fat", label: "Fat (g)", field: "fat", sortable: true },
-			{ name: "carbs", label: "Carbs (g)", field: "carbs" },
-			{ name: "protein", label: "Protein (g)", field: "protein" },
-			{ name: "sodium", label: "Sodium (mg)", field: "sodium" },
+			{ name: "fat", label: "脂肪 (g)", field: "fat", sortable: true },
+			{ name: "carbs", label: "碳水 (g)", field: "carbs" },
+			{ name: "protein", label: "蛋白质 (g)", field: "protein" },
+			{ name: "sodium", label: "钠 (mg)", field: "sodium" },
 			{
 				name: "calcium",
-				label: "Calcium (%)",
+				label: "钙 (%)",
 				field: "calcium",
 				sortable: true,
 				sort: (a, b) => Number.parseInt(a, 10) - Number.parseInt(b, 10),
 			},
 			{
 				name: "iron",
-				label: "Iron (%)",
+				label: "铁 (%)",
 				field: "iron",
 				sortable: true,
 				sort: (a, b) => Number.parseInt(a, 10) - Number.parseInt(b, 10),
@@ -63,7 +63,7 @@ export default defineComponent({
 		],
 		rows: [
 			{
-				name: "Frozen Yogurt",
+				name: "冻酸奶",
 				calories: 159,
 				fat: 6.0,
 				carbs: 24,
@@ -73,7 +73,7 @@ export default defineComponent({
 				iron: "1%",
 			},
 			{
-				name: "Ice cream sandwich",
+				name: "冰淇淋夹心",
 				calories: 237,
 				fat: 9.0,
 				carbs: 37,
@@ -83,7 +83,7 @@ export default defineComponent({
 				iron: "1%",
 			},
 			{
-				name: "Eclair",
+				name: "闪电泡芙",
 				calories: 262,
 				fat: 16.0,
 				carbs: 23,
@@ -93,7 +93,7 @@ export default defineComponent({
 				iron: "7%",
 			},
 			{
-				name: "Cupcake",
+				name: "纸杯蛋糕",
 				calories: 305,
 				fat: 3.7,
 				carbs: 67,
@@ -103,7 +103,7 @@ export default defineComponent({
 				iron: "8%",
 			},
 			{
-				name: "Gingerbread",
+				name: "姜饼",
 				calories: 356,
 				fat: 16.0,
 				carbs: 49,
@@ -113,7 +113,7 @@ export default defineComponent({
 				iron: "16%",
 			},
 			{
-				name: "Jelly bean",
+				name: "软心豆粒糖",
 				calories: 375,
 				fat: 0.0,
 				carbs: 94,
@@ -123,7 +123,7 @@ export default defineComponent({
 				iron: "0%",
 			},
 			{
-				name: "Lollipop",
+				name: "棒棒糖",
 				calories: 392,
 				fat: 0.2,
 				carbs: 98,
@@ -133,7 +133,7 @@ export default defineComponent({
 				iron: "2%",
 			},
 			{
-				name: "Honeycomb",
+				name: "蜂巢糖",
 				calories: 408,
 				fat: 3.2,
 				carbs: 87,
@@ -143,7 +143,7 @@ export default defineComponent({
 				iron: "45%",
 			},
 			{
-				name: "Donut",
+				name: "甜甜圈",
 				calories: 452,
 				fat: 25.0,
 				carbs: 51,
@@ -153,7 +153,7 @@ export default defineComponent({
 				iron: "22%",
 			},
 			{
-				name: "KitKat",
+				name: "奇巧巧克力",
 				calories: 518,
 				fat: 26.0,
 				carbs: 65,

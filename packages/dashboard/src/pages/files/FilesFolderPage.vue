@@ -33,11 +33,11 @@
               </div>
           </template>
 
-          <template v-slot:no-data>
-            <div class="full-width q-my-lg" v-if="!loading">
-              <h6 class="flex items-center justify-center"><q-icon name="folder" color="orange" size="lg" />This folder is empty</h6>
-            </div>
-          </template>
+					<template v-slot:no-data>
+						<div class="full-width q-my-lg" v-if="!loading">
+							<h6 class="flex items-center justify-center"><q-icon name="folder" color="orange" size="lg" />此文件夹为空</h6>
+						</div>
+					</template>
 
           <template v-slot:body-cell-name="prop">
             <td class="flex" style="align-items: center">
@@ -69,14 +69,14 @@
           </template>
         </q-table>
 
-        <div v-if="loadingMore" class="q-pa-md text-center">
-          <q-spinner color="primary" size="md" />
-          <div class="q-mt-sm text-grey">Loading more files...</div>
-        </div>
+				<div v-if="loadingMore" class="q-pa-md text-center">
+					<q-spinner color="primary" size="md" />
+					<div class="q-mt-sm text-grey">正在加载更多文件...</div>
+				</div>
 
-        <div v-if="!hasMore && rows.length > 0 && !loading" class="q-pa-md text-center text-grey">
-          No more files to load
-        </div>
+				<div v-if="!hasMore && rows.length > 0 && !loading" class="q-pa-md text-center text-grey">
+					没有更多文件
+				</div>
 
       </drag-and-drop>
 
@@ -110,7 +110,7 @@ export default defineComponent({
 			{
 				name: "name",
 				required: true,
-				label: "Name",
+				label: "名称",
 				align: "left",
 				field: "name",
 				sortable: true,
@@ -134,7 +134,7 @@ export default defineComponent({
 			{
 				name: "lastModified",
 				required: true,
-				label: "Last Modified",
+				label: "最后修改",
 				align: "left",
 				field: "lastModified",
 				sortable: true,
@@ -145,7 +145,7 @@ export default defineComponent({
 			{
 				name: "size",
 				required: true,
-				label: "Size",
+				label: "大小",
 				align: "left",
 				field: "size",
 				sortable: true,

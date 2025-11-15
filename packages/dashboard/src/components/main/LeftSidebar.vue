@@ -1,15 +1,15 @@
 <template>
   <div class="q-pa-md" style="height: 100%">
     <div class="flex column" style="height: 100%">
-      <q-btn v-if="mainStore.apiReadonly" color="red" stack class="q-mb-lg" label="Read only" />
-      <q-btn v-else color="green" icon="add" stack class="q-mb-lg" label="New">
+  <q-btn v-if="mainStore.apiReadonly" color="red" stack class="q-mb-lg" label="只读模式" />
+  <q-btn v-else color="green" icon="add" stack class="q-mb-lg" label="新建">
         <q-menu>
           <q-list>
             <q-item clickable v-close-popup @click="$refs.createFile.open()">
               <q-item-section>
                 <q-item-label>
                   <q-icon name="note_add" size="sm" />
-                  New File
+                  新建文件
                 </q-item-label>
               </q-item-section>
             </q-item>
@@ -17,7 +17,7 @@
               <q-item-section>
                 <q-item-label>
                   <q-icon name="create_new_folder" size="sm" />
-                  New Folder
+                  新建文件夹
                 </q-item-label>
               </q-item-section>
             </q-item>
@@ -26,7 +26,7 @@
               <q-item-section>
                 <q-item-label>
                   <q-icon name="upload_file" size="sm" />
-                  Upload Files
+                  上传文件
                 </q-item-label>
               </q-item-section>
             </q-item>
@@ -35,7 +35,7 @@
               <q-item-section>
                 <q-item-label>
                   <q-icon name="folder" size="sm" />
-                  Upload Folders
+                  上传文件夹
                 </q-item-label>
               </q-item-section>
             </q-item>
@@ -43,11 +43,11 @@
         </q-menu>
       </q-btn>
 
-      <q-btn class="q-mb-sm" @click="gotoFiles" color="blue" icon="folder_copy" label="Files" stack />
-      <q-btn v-if="mainStore.config && mainStore.config.emailRouting !== false" class="q-mb-sm" @click="gotoEmail" color="blue" icon="email" label="Email" stack />
+  <q-btn class="q-mb-sm" @click="gotoFiles" color="blue" icon="folder_copy" label="文件" stack />
+  <q-btn v-if="mainStore.config && mainStore.config.emailRouting !== false" class="q-mb-sm" @click="gotoEmail" color="blue" icon="email" label="邮件" stack />
 
       <q-btn class="q-mb-sm q-mt-auto q-mb-0" @click="infoPopup=true" color="secondary" icon="question_mark"
-             label="Info"
+             label="信息"
              stack />
     </div>
   </div>
@@ -55,30 +55,30 @@
   <q-dialog v-model="infoPopup" persistent no-route-dismiss>
     <q-card>
       <q-card-section>
-        <div class="text-h6">🎉 Thank you for using R2-Explorer! 🚀</div>
+  <div class="text-h6">🎉 感谢使用 R2-Explorer！🚀</div>
       </q-card-section>
 
       <q-card-section class="q-pt-none">
-        You are running version <b>{{ mainStore.version }}</b><br>
+  当前运行版本 <b>{{ mainStore.version }}</b><br>
         <template v-if="updateAvailable">
-          Latest version is <b>{{latestVersion}}</b>, learn how to <a href="https://r2explorer.com/getting-started/updating-your-project/" target="_blank">update your instance here</a>.<br>
+          最新版本为 <b>{{latestVersion}}</b>，查看 <a href="https://r2explorer.com/getting-started/updating-your-project/" target="_blank">更新指南</a>。<br>
         </template>
         <br>
         <template v-if="mainStore.auth">
-          <b>Authentication</b><br>
-          Method: {{ mainStore.auth.type }}<br>
-          Username: {{ mainStore.auth.username }}
+          <b>认证信息</b><br>
+          方式：{{ mainStore.auth.type }}<br>
+          用户名：{{ mainStore.auth.username }}
         </template>
         <template v-else>
-          Not authenticated
+          未认证
         </template>
         <br><br>
-        <b>Server Configuration</b><br>
+  <b>服务器配置</b><br>
         {{ JSON.stringify(mainStore.config, null, 2) }}
       </q-card-section>
 
       <q-card-actions align="right">
-        <q-btn flat label="OK" color="primary" v-close-popup />
+  <q-btn flat label="确定" color="primary" v-close-popup />
       </q-card-actions>
     </q-card>
   </q-dialog>

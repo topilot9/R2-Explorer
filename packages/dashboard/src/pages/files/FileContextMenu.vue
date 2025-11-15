@@ -1,22 +1,22 @@
 <template>
   <q-list style="min-width: 100px">
-    <q-item clickable v-close-popup @click="openObject">
-      <q-item-section>Open</q-item-section>
+		<q-item clickable v-close-popup @click="openObject">
+			<q-item-section>打开</q-item-section>
     </q-item>
-    <q-item clickable v-close-popup @click="downloadObject" v-if="prop.row.type === 'file'">
-      <q-item-section>Download</q-item-section>
+		<q-item clickable v-close-popup @click="downloadObject" v-if="prop.row.type === 'file'">
+			<q-item-section>下载</q-item-section>
     </q-item>
-    <q-item clickable v-close-popup @click="renameObject" v-if="prop.row.type === 'file'">
-      <q-item-section>Rename</q-item-section>
+		<q-item clickable v-close-popup @click="renameObject" v-if="prop.row.type === 'file'">
+			<q-item-section>重命名</q-item-section>
     </q-item>
-    <q-item clickable v-close-popup @click="updateMetadataObject" v-if="prop.row.type === 'file'">
-      <q-item-section>Update Metadata</q-item-section>
+		<q-item clickable v-close-popup @click="updateMetadataObject" v-if="prop.row.type === 'file'">
+			<q-item-section>更新元数据</q-item-section>
     </q-item>
-    <q-item clickable v-close-popup @click="shareObject">
-      <q-item-section>Get sharable link</q-item-section>
+		<q-item clickable v-close-popup @click="shareObject">
+			<q-item-section>复制分享链接</q-item-section>
     </q-item>
-    <q-item clickable v-close-popup @click="deleteObject">
-      <q-item-section>Delete</q-item-section>
+		<q-item clickable v-close-popup @click="deleteObject">
+			<q-item-section>删除</q-item-section>
     </q-item>
   </q-list>
 </template>
@@ -87,13 +87,13 @@ export default {
 			try {
 				await navigator.clipboard.writeText(url);
 				this.q.notify({
-					message: "Link to file copied to clipboard!",
+					message: "文件链接已复制！",
 					timeout: 5000,
 					type: "positive",
 				});
 			} catch (err) {
 				this.q.notify({
-					message: `Failed to copy: ${err}`,
+					message: `复制失败: ${err}`,
 					timeout: 5000,
 					type: "negative",
 				});

@@ -1,9 +1,9 @@
 <template>
   <q-page class="flex flex-center">
-    <q-inner-loading
-      :showing="true"
-      label="Loading..."
-    />
+		<q-inner-loading
+			:showing="true"
+			label="加载中..."
+		/>
   </q-page>
 </template>
 

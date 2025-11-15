@@ -72,12 +72,12 @@
           </template>
 
           <template v-slot:no-data>
-            <div class="full-width q-my-lg" v-if="!loading">
-              <h6 class="flex items-center justify-center">
-                <q-icon name="alternate_email" color="orange" size="lg" />
-                This bucket doesn't have Emails
-              </h6>
-            </div>
+						<div class="full-width q-my-lg" v-if="!loading">
+							<h6 class="flex items-center justify-center">
+								<q-icon name="alternate_email" color="orange" size="lg" />
+								此存储桶没有邮件
+							</h6>
+						</div>
           </template>
 
           <template v-slot:body-cell-has_attachments="prop">
@@ -88,9 +88,9 @@
           </template>
         </q-table>
         <template v-if="!hasMorePages">
-          <div class="row justify-center q-my-md">
-            <span>No more emails to load</span>
-          </div>
+					<div class="row justify-center q-my-md">
+						<span>没有更多邮件</span>
+					</div>
         </template>
         <template v-slot:loading>
           <div class="row justify-center q-my-md">

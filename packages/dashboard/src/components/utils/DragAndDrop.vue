@@ -10,7 +10,7 @@
     <slot></slot>
     <div class="drop-files">
       <div class="box">
-        <h3>Drop files to upload</h3>
+	<h3>拖拽文件到此上传</h3>
         <span class="font-28"><i class="bi bi-cloud-upload-fill"></i></span>
       </div>
     </div>
